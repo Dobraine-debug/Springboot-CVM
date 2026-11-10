@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Book club: book search</title>
+</head>
+<body>
+<h1>Book search</h1>
+<span th:text="${message}"></span>
+<p>
+<table th:if="${books.size() > 0}">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+    </tr>
+    <span th:each="book : ${books}">
+        <tr>
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.genre}"></td>
+        </tr>
+    </span>
+</table>
+</p>
+
+</body>
+</html>
